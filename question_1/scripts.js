@@ -8,4 +8,13 @@ function handleSubmitButton () {
     var password = $("#password").val();
     console.log(username);
     console.log(password);
+    function sendCreds() {
+        $.ajax({
+            url: "https://dummyjson.com/auth/login",
+            method: "POST",
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    }
 }

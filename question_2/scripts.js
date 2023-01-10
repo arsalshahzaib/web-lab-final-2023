@@ -4,7 +4,7 @@ $(function() {
     // jQuery will execute this function after the page loading
     // so do your bindings here..
     $("#addButton").click(handleButtonClick);
-    $("#todo").on("click", "li", removeTODO);
+    $("#todo").on("click", ".deleteButton", removeTODO);
 });
 
 function handleButtonClick() {
@@ -15,7 +15,8 @@ function handleButtonClick() {
         return;
     }
     $("#add-new-todo").removeClass("error");
-    $("#todo").append("<li>" + newTODO + "</li>");
+    $("#todo").append("<li>" + newTODO + "<button>Delete</button></li>");
+    $("li button").addClass("deleteButton");
     $("#add-new-todo").val("");
     // $("#todo li").click(removeTODO); DRY
 }
